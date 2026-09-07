@@ -1,0 +1,129 @@
+<mxGraphModel dx="3083" dy="761" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="1100" background="#F8FAFC" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    <mxCell id="client_tier" parent="1" style="swimlane;whiteSpace=wrap;html=1;startSize=28;fillColor=#EFF6FF;strokeColor=#3B82F6;fontStyle=1;fontSize=14;fontColor=#1E3A8A;rounded=1;gradientColor=none;swimlaneFillColor=light-dark(#EFF6FF,#002525);" value="1. CLIENT LAYER (Frontend Apps)" vertex="1">
+      <mxGeometry height="150" width="1380" x="60" y="60" as="geometry" />
+    </mxCell>
+    <mxCell id="agent_portal" parent="client_tier" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=2;fontSize=12;fontColor=#1E293B;" value="&lt;b&gt;Agent Web Portal (Next.js / React)&lt;/b&gt;&lt;br&gt;• WebRTC Softphone Dial Pad&lt;br&gt;• Inbound Screen Pop &amp; Click-to-Call&lt;br&gt;• Customer CRM Profile &amp; Timeline" vertex="1">
+      <mxGeometry height="85" width="400" x="120" y="45" as="geometry" />
+    </mxCell>
+    <mxCell id="admin_portal" parent="client_tier" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=2;fontSize=12;fontColor=#1E293B;" value="&lt;b&gt;Office Admin &amp; Super Admin Portal&lt;/b&gt;&lt;br&gt;• Stripe Subscription &amp; DID Purchasing&lt;br&gt;• Team Quotas &amp; Call Analytics (CDR)&lt;br&gt;• Super Admin Tenant Impersonation" vertex="1">
+      <mxGeometry height="85" width="400" x="860" y="45" as="geometry" />
+    </mxCell>
+    <mxCell id="gw_tier" parent="1" style="swimlane;whiteSpace=wrap;html=1;startSize=28;fillColor=#F1F5F9;strokeColor=#64748B;fontStyle=1;fontSize=14;fontColor=#0F172A;rounded=1;swimlaneFillColor=#F1F5F9;" value="2. GATEWAY &amp; SECURITY LAYER" vertex="1">
+      <mxGeometry height="110" width="1380" x="60" y="250" as="geometry" />
+    </mxCell>
+    <mxCell id="cloudflare" parent="gw_tier" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#475569;fontSize=12;fontColor=#1E293B;" value="&lt;b&gt;Cloudflare CDN / WAF&lt;/b&gt;&lt;br&gt;DDoS Shield &amp; SSL Termination" vertex="1">
+      <mxGeometry height="50" width="260" x="250" y="42" as="geometry" />
+    </mxCell>
+    <mxCell id="api_gw" parent="gw_tier" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#475569;fontSize=12;fontColor=#1E293B;" value="&lt;b&gt;API Gateway &amp; Reverse Proxy&lt;/b&gt;&lt;br&gt;Rate Limiter • Tenant Domain Resolver" vertex="1">
+      <mxGeometry height="50" width="260" x="870" y="42" as="geometry" />
+    </mxCell>
+    <mxCell id="backend_tier" parent="1" style="swimlane;whiteSpace=wrap;html=1;startSize=28;fillColor=#F8FAFC;strokeColor=#0EA5E9;fontStyle=1;fontSize=14;fontColor=#0369A1;rounded=1;swimlaneFillColor=#F8FAFC;" value="3. APPLICATION SERVICES (Backend Services)" vertex="1">
+      <mxGeometry height="150" width="1380" x="60" y="400" as="geometry" />
+    </mxCell>
+    <mxCell id="svc_auth" parent="backend_tier" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0284C7;strokeWidth=1.5;fontSize=11;fontColor=#0F172A;" value="&lt;b&gt;Auth &amp; RBAC Service&lt;/b&gt;&lt;br&gt;• Multi-tenant JWT Token&lt;br&gt;• 2FA / TOTP Security" vertex="1">
+      <mxGeometry height="80" width="240" x="50" y="45" as="geometry" />
+    </mxCell>
+    <mxCell id="svc_crm" parent="backend_tier" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0284C7;strokeWidth=1.5;fontSize=11;fontColor=#0F172A;" value="&lt;b&gt;Core CRM Service&lt;/b&gt;&lt;br&gt;• Customer Profiles &amp; Timeline&lt;br&gt;• Appointment Scheduler" vertex="1">
+      <mxGeometry height="80" width="240" x="380" y="45" as="geometry" />
+    </mxCell>
+    <mxCell id="svc_voice" parent="backend_tier" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0284C7;strokeWidth=1.5;fontSize=11;fontColor=#0F172A;" value="&lt;b&gt;Voice &amp; Telecom Gateway&lt;/b&gt;&lt;br&gt;• Twilio Voice Token Issuer&lt;br&gt;• TwiML Router (In/Outbound)&lt;br&gt;• CDR &amp; Status Webhooks" vertex="1">
+      <mxGeometry height="80" width="270" x="710" y="45" as="geometry" />
+    </mxCell>
+    <mxCell id="svc_billing" parent="backend_tier" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0284C7;strokeWidth=1.5;fontSize=11;fontColor=#0F172A;" value="&lt;b&gt;Billing &amp; Provisioning Engine&lt;/b&gt;&lt;br&gt;• Stripe Seat Subscriptions&lt;br&gt;• Twilio Subaccount Generator&lt;br&gt;• Prepaid Wallet &amp; Quotas" vertex="1">
+      <mxGeometry height="80" width="260" x="1070" y="45" as="geometry" />
+    </mxCell>
+    <mxCell id="worker_tier" parent="1" style="swimlane;whiteSpace=wrap;html=1;startSize=28;fillColor=#FEFCE8;strokeColor=#EAB308;fontStyle=1;fontSize=14;fontColor=#854D0E;rounded=1;swimlaneFillColor=#FEFCE8;" value="4. ASYNC WORKERS &amp; QUEUES" vertex="1">
+      <mxGeometry height="140" width="850" x="60" y="590" as="geometry" />
+    </mxCell>
+    <mxCell id="redis_queue" parent="worker_tier" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#FFFFFF;strokeColor=#CA8A04;fontColor=#713F12;fontSize=11;" value="&lt;b&gt;Message Queue&lt;/b&gt;&lt;br&gt;(Redis / BullMQ)&lt;br&gt;Recording &amp; SMS Jobs" vertex="1">
+      <mxGeometry height="80" width="160" x="80" y="40" as="geometry" />
+    </mxCell>
+    <mxCell id="worker_ai" parent="worker_tier" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CA8A04;fontSize=11;fontColor=#713F12;" value="&lt;b&gt;AI Summarizer Worker&lt;/b&gt;&lt;br&gt;• Fetch Audio &amp; Transcribe STT&lt;br&gt;• Extract Sentiment &amp; Action Items" vertex="1">
+      <mxGeometry height="70" width="220" x="340" y="45" as="geometry" />
+    </mxCell>
+    <mxCell id="worker_sms" parent="worker_tier" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CA8A04;fontSize=11;fontColor=#713F12;" value="&lt;b&gt;SMS Reminder Worker&lt;/b&gt;&lt;br&gt;• 24h &amp; 2h Appointment Alerts&lt;br&gt;• Parse Inbound (C/R) Replies" vertex="1">
+      <mxGeometry height="70" width="200" x="610" y="45" as="geometry" />
+    </mxCell>
+    <mxCell id="data_tier" parent="1" style="swimlane;whiteSpace=wrap;html=1;startSize=28;fillColor=#F0FDF4;strokeColor=#22C55E;fontStyle=1;fontSize=14;fontColor=#166534;rounded=1;swimlaneFillColor=#F0FDF4;" value="5. DATA PERSISTENCE LAYER" vertex="1">
+      <mxGeometry height="140" width="490" x="950" y="590" as="geometry" />
+    </mxCell>
+    <mxCell id="db_pg" parent="data_tier" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#FFFFFF;strokeColor=#16A34A;fontColor=#14532D;fontSize=11;" value="&lt;b&gt;PostgreSQL (Multi-tenant)&lt;/b&gt;&lt;br&gt;• Row-Level Security (RLS)&lt;br&gt;• Isolated via `tenant_id`&lt;br&gt;• Customers, Logs, Appointments" vertex="1">
+      <mxGeometry height="85" width="220" x="40" y="38" as="geometry" />
+    </mxCell>
+    <mxCell id="db_redis" parent="data_tier" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#FFFFFF;strokeColor=#16A34A;fontColor=#14532D;fontSize=11;" value="&lt;b&gt;Redis Cache&lt;/b&gt;&lt;br&gt;• Agent Presence&lt;br&gt;• Rate Limits &amp; Tokens" vertex="1">
+      <mxGeometry height="85" width="150" x="300" y="38" as="geometry" />
+    </mxCell>
+    <mxCell id="ext_tier" parent="1" style="swimlane;whiteSpace=wrap;html=1;startSize=28;fillColor=#FAF5FF;strokeColor=#A855F7;fontStyle=1;fontSize=14;fontColor=#6B21A8;rounded=1;swimlaneFillColor=#FAF5FF;" value="6. EXTERNAL CLOUD PROVIDERS &amp; 3RD PARTY APIS" vertex="1">
+      <mxGeometry height="140" width="1380" x="60" y="780" as="geometry" />
+    </mxCell>
+    <mxCell id="ext_twilio" parent="ext_tier" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9333EA;strokeWidth=1.5;fontSize=11;fontColor=#581C87;" value="&lt;b&gt;Twilio Voice &amp; WebRTC Cloud&lt;/b&gt;&lt;br&gt;• SIP / PSTN Media Gateways&lt;br&gt;• Subaccounts Isolation&lt;br&gt;• US Phone DID Inventory" vertex="1">
+      <mxGeometry height="75" width="230" x="50" y="45" as="geometry" />
+    </mxCell>
+    <mxCell id="ext_s3" parent="ext_tier" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9333EA;strokeWidth=1.5;fontSize=11;fontColor=#581C87;" value="&lt;b&gt;Encrypted Audio Storage&lt;/b&gt;&lt;br&gt;(Amazon S3 / Cloudflare R2)&lt;br&gt;• HIPAA Compliant Call Audios&lt;br&gt;• Presigned URL Playback" vertex="1">
+      <mxGeometry height="75" width="230" x="340" y="45" as="geometry" />
+    </mxCell>
+    <mxCell id="ext_ai" parent="ext_tier" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9333EA;strokeWidth=1.5;fontSize=11;fontColor=#581C87;" value="&lt;b&gt;AI Cloud Engine&lt;/b&gt;&lt;br&gt;(OpenAI Whisper / Deepgram)&lt;br&gt;• Audio Diarization (Agent/Client)&lt;br&gt;• LLM Summary &amp; Action Items" vertex="1">
+      <mxGeometry height="75" width="230" x="630" y="45" as="geometry" />
+    </mxCell>
+    <mxCell id="ext_twilio_msg" parent="ext_tier" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9333EA;strokeWidth=1.5;fontSize=11;fontColor=#581C87;" value="&lt;b&gt;Twilio Messaging (SMS)&lt;/b&gt;&lt;br&gt;• A2P 10DLC Compliance&lt;br&gt;• 2-Way Appointment Texts" vertex="1">
+      <mxGeometry height="75" width="210" x="900" y="45" as="geometry" />
+    </mxCell>
+    <mxCell id="ext_stripe" parent="ext_tier" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9333EA;strokeWidth=1.5;fontSize=11;fontColor=#581C87;" value="&lt;b&gt;Stripe Billing API&lt;/b&gt;&lt;br&gt;• Monthly Seat Subscriptions&lt;br&gt;• Customer Invoicing Portal" vertex="1">
+      <mxGeometry height="75" width="190" x="1150" y="45" as="geometry" />
+    </mxCell>
+    <mxCell id="edge_webrtc" edge="1" parent="1" source="agent_portal" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#EF4444;strokeWidth=3;dashed=1;fontColor=#B91C1C;fontSize=11;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="ext_twilio" value="&lt;b&gt;Direct WebRTC Audio Stream (RTP/SRTP)&lt;/b&gt;">
+      <mxGeometry relative="1" x="-0.3" y="15" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge_fe_gw1" edge="1" parent="1" source="agent_portal" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#2563EB;strokeWidth=1.5;" target="cloudflare">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge_fe_gw2" edge="1" parent="1" source="admin_portal" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#2563EB;strokeWidth=1.5;" target="api_gw">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge_gw_api" edge="1" parent="1" source="cloudflare" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748B;strokeWidth=1.5;" target="api_gw">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge_gw_backend" edge="1" parent="1" source="api_gw" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748B;strokeWidth=1.5;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="svc_crm">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="1060" y="376" />
+          <mxPoint x="560" y="376" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge_voice_redis" edge="1" parent="1" source="svc_voice" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#16A34A;strokeWidth=1.5;exitX=0.8;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="db_redis">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge_voice_twilio" edge="1" parent="1" source="svc_voice" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#9333EA;strokeWidth=1.5;fontColor=#581C87;fontSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="ext_twilio" value="TwiML / Webhooks">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="905" y="739" />
+          <mxPoint x="225" y="739" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge_voice_queue" edge="1" parent="1" source="svc_voice" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#EAB308;strokeWidth=1.5;fontColor=#854D0E;fontSize=10;exitX=0.4;exitY=1;exitDx=0;exitDy=0;entryX=0.7;entryY=0;entryDx=0;entryDy=0;" target="redis_queue" value="Call Finished (Enqueue Audio)">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge_queue_ai" edge="1" parent="1" source="redis_queue" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#EAB308;strokeWidth=1.5;" target="worker_ai">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge_ai_s3" edge="1" parent="1" source="worker_ai" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#9333EA;strokeWidth=1.5;fontColor=#581C87;fontSize=10;exitX=0.3;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="ext_s3" value="Get Audio">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge_ai_engine" edge="1" parent="1" source="worker_ai" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#9333EA;strokeWidth=1.5;fontColor=#581C87;fontSize=10;exitX=0.7;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="ext_ai" value="Transcribe &amp; LLM Prompt">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge_worker_sms" edge="1" parent="1" source="worker_sms" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#9333EA;strokeWidth=1.5;fontColor=#581C87;fontSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="ext_twilio_msg" value="Send Reminder">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="vJmCVjvRKwmmNWBZWpRU-1" edge="1" parent="1" source="svc_billing" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#9333EA;curved=0;strokeWidth=1.5;" target="ext_stripe">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+  </root>
+</mxGraphModel>
